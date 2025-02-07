@@ -1,0 +1,219 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/18639/Downloads/CodeGenerated/DE10_LITE/simulation/modelsim
+T_opt
+!s110 1738100923
+VB<^=32LY7kGTU24[>Z0QZ0
+04 6 4 work sac_tb fast 0
+=1-3003c8261333-679950ba-252-5fa4
+!s124 OEM10U2 
+o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
+R1
+vadd
+Z3 !s110 1738710082
+!i10b 1
+!s100 Um@5O;R1UoBUjG1Imz84g3
+IKWkQ<GTEHJbBL:mO^OQcR1
+R1
+Z4 w1738710017
+Z5 8C:/Users/18639/Downloads/CodeGenerated/DE10_LITE/addandmultiply.v
+Z6 FC:/Users/18639/Downloads/CodeGenerated/DE10_LITE/addandmultiply.v
+!i122 1
+L0 1 8
+Z7 VDg1SIo80bB@j0V0VzS_@n1
+Z8 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z9 !s108 1738710082.000000
+Z10 !s107 C:/Users/18639/Downloads/CodeGenerated/DE10_LITE/addandmultiply.v|
+Z11 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/18639/Downloads/CodeGenerated/DE10_LITE|C:/Users/18639/Downloads/CodeGenerated/DE10_LITE/addandmultiply.v|
+!i113 0
+Z12 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z13 !s92 -vlog01compat -work work +incdir+C:/Users/18639/Downloads/CodeGenerated/DE10_LITE -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vconvert
+R3
+!i10b 1
+!s100 lX^ZbXJ5jLNO@ZiFoZY9R1
+IL[XJ@?PS^15IFMA4nOD:91
+R1
+Z14 w1738438105
+Z15 8C:/Users/18639/Downloads/CodeGenerated/DE10_LITE/shiftandarithmetic_SegmentConversion.v
+Z16 FC:/Users/18639/Downloads/CodeGenerated/DE10_LITE/shiftandarithmetic_SegmentConversion.v
+!i122 2
+L0 3 30
+R7
+R8
+r1
+!s85 0
+31
+R9
+Z17 !s107 C:/Users/18639/Downloads/CodeGenerated/DE10_LITE/shiftandarithmetic_SegmentConversion.v|
+Z18 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/18639/Downloads/CodeGenerated/DE10_LITE|C:/Users/18639/Downloads/CodeGenerated/DE10_LITE/shiftandarithmetic_SegmentConversion.v|
+!i113 0
+R12
+R13
+R2
+vconvertCarry
+R3
+!i10b 1
+!s100 hV=cj?lbH8X5Hf3<072981
+I>dcf:2RL1F79EnQ4BKg`51
+R1
+R14
+R15
+R16
+!i122 2
+L0 37 16
+R7
+R8
+r1
+!s85 0
+31
+R9
+R17
+R18
+!i113 0
+R12
+R13
+R2
+nconvert@carry
+vfulladder
+R3
+!i10b 1
+!s100 UFKd?ZPf[gDX1gi4cJkSJ3
+I398OM41SVEX`D4I55VXgo1
+R1
+R4
+R5
+R6
+!i122 1
+L0 41 6
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R2
+vhalfadder
+R3
+!i10b 1
+!s100 PHNnQEae0Li[OHaIIl`GQ3
+IdnS5`6<V]XjERL1O<We1S2
+R1
+R4
+R5
+R6
+!i122 1
+L0 48 6
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R2
+vmultiply
+R3
+!i10b 1
+!s100 ^`<8XjX>AJ6@`64D3nPmd0
+ITWBL_SPBlDiDWm_>KJ88j1
+R1
+R4
+R5
+R6
+!i122 1
+L0 10 30
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R2
+vsaa_tb
+R3
+!i10b 1
+!s100 2QMH5j55V?MPA5WgYR@YO3
+Iig3Ji@FD5HSW7NBJ1_0[o0
+R1
+w1738710016
+8C:/Users/18639/Downloads/CodeGenerated/DE10_LITE/shiftandarithmeticTestbench.v
+FC:/Users/18639/Downloads/CodeGenerated/DE10_LITE/shiftandarithmeticTestbench.v
+!i122 3
+L0 2 31
+R7
+R8
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/18639/Downloads/CodeGenerated/DE10_LITE/shiftandarithmeticTestbench.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/18639/Downloads/CodeGenerated/DE10_LITE|C:/Users/18639/Downloads/CodeGenerated/DE10_LITE/shiftandarithmeticTestbench.v|
+!i113 0
+R12
+R13
+R2
+vshiftandarithmeticFPGA
+R3
+!i10b 1
+!s100 Ro`n0m3zERhEjIBN_Ve<F3
+IRjjzB@]3X@CcC1hRn[_L53
+R1
+w1738429475
+8C:/Users/18639/Downloads/CodeGenerated/DE10_LITE/shiftandarithmeticFPGA.v
+FC:/Users/18639/Downloads/CodeGenerated/DE10_LITE/shiftandarithmeticFPGA.v
+!i122 0
+L0 1 58
+R7
+R8
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/18639/Downloads/CodeGenerated/DE10_LITE/shiftandarithmeticFPGA.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/18639/Downloads/CodeGenerated/DE10_LITE|C:/Users/18639/Downloads/CodeGenerated/DE10_LITE/shiftandarithmeticFPGA.v|
+!i113 0
+R12
+R13
+R2
+nshiftandarithmetic@f@p@g@a

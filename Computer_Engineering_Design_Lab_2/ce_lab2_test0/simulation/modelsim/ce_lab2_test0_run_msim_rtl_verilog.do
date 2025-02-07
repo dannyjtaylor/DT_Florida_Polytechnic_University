@@ -1,0 +1,17 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+C:/Users/18639/Downloads/CodeGenerated/DE10_LITE/ce_lab2_test0 {C:/Users/18639/Downloads/CodeGenerated/DE10_LITE/ce_lab2_test0/ce_lab2_test0.v}
+
+vlog -vlog01compat -work work +incdir+C:/Users/18639/Downloads/CodeGenerated/DE10_LITE/ce_lab2_test0 {C:/Users/18639/Downloads/CodeGenerated/DE10_LITE/ce_lab2_test0/celab2_test0_testbench.v}
+
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  test0_tb
+
+add wave *
+view structure
+view signals
+run -all

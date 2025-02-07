@@ -1,0 +1,34 @@
+m255
+K4
+z2
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/18639/Downloads/CodeGenerated/DE10_LITE/ce_lab2_test44/simulation/modelsim
+vce_lab2_test44
+!s110 1738021254
+!i10b 1
+!s100 ]RZ0:]UIRO65T0gILT`L30
+IFEclj=]hg4jY<c8=Wk9@<0
+R0
+w1738020628
+8C:/Users/18639/Downloads/CodeGenerated/DE10_LITE/ce_lab2_test44/ce_lab2_test44.v
+FC:/Users/18639/Downloads/CodeGenerated/DE10_LITE/ce_lab2_test44/ce_lab2_test44.v
+!i122 0
+L0 6 29
+VDg1SIo80bB@j0V0VzS_@n1
+OL;L;2021.2;73
+r1
+!s85 0
+31
+!s108 1738021254.000000
+!s107 C:/Users/18639/Downloads/CodeGenerated/DE10_LITE/ce_lab2_test44/ce_lab2_test44.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/18639/Downloads/CodeGenerated/DE10_LITE/ce_lab2_test44|C:/Users/18639/Downloads/CodeGenerated/DE10_LITE/ce_lab2_test44/ce_lab2_test44.v|
+!i113 0
+o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+!s92 -vlog01compat -work work +incdir+C:/Users/18639/Downloads/CodeGenerated/DE10_LITE/ce_lab2_test44 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+tCvgOpt 0

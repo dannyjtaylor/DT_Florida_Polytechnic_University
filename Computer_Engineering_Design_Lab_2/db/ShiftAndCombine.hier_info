@@ -1,0 +1,385 @@
+|shiftandarithmeticFPGA
+HEX0[0] << convert:dispCombine2.port1
+HEX0[1] << convert:dispCombine2.port1
+HEX0[2] << convert:dispCombine2.port1
+HEX0[3] << convert:dispCombine2.port1
+HEX0[4] << convert:dispCombine2.port1
+HEX0[5] << convert:dispCombine2.port1
+HEX0[6] << convert:dispCombine2.port1
+HEX0[7] << convert:dispCombine2.port1
+HEX1[0] << convert:dispCombine.port1
+HEX1[1] << convert:dispCombine.port1
+HEX1[2] << convert:dispCombine.port1
+HEX1[3] << convert:dispCombine.port1
+HEX1[4] << convert:dispCombine.port1
+HEX1[5] << convert:dispCombine.port1
+HEX1[6] << convert:dispCombine.port1
+HEX1[7] << convert:dispCombine.port1
+HEX2[0] << convert:dispAdd.port1
+HEX2[1] << convert:dispAdd.port1
+HEX2[2] << convert:dispAdd.port1
+HEX2[3] << convert:dispAdd.port1
+HEX2[4] << convert:dispAdd.port1
+HEX2[5] << convert:dispAdd.port1
+HEX2[6] << convert:dispAdd.port1
+HEX2[7] << convert:dispAdd.port1
+HEX3[0] << convertCarry:dispCarry.port1
+HEX3[1] << convertCarry:dispCarry.port1
+HEX3[2] << convertCarry:dispCarry.port1
+HEX3[3] << convertCarry:dispCarry.port1
+HEX3[4] << convertCarry:dispCarry.port1
+HEX3[5] << convertCarry:dispCarry.port1
+HEX3[6] << convertCarry:dispCarry.port1
+HEX3[7] << convertCarry:dispCarry.port1
+HEX4[0] << convert:dispProduct1.port1
+HEX4[1] << convert:dispProduct1.port1
+HEX4[2] << convert:dispProduct1.port1
+HEX4[3] << convert:dispProduct1.port1
+HEX4[4] << convert:dispProduct1.port1
+HEX4[5] << convert:dispProduct1.port1
+HEX4[6] << convert:dispProduct1.port1
+HEX4[7] << convert:dispProduct1.port1
+HEX5[0] << convert:dispProduct2.port1
+HEX5[1] << convert:dispProduct2.port1
+HEX5[2] << convert:dispProduct2.port1
+HEX5[3] << convert:dispProduct2.port1
+HEX5[4] << convert:dispProduct2.port1
+HEX5[5] << convert:dispProduct2.port1
+HEX5[6] << convert:dispProduct2.port1
+HEX5[7] << convert:dispProduct2.port1
+LEDR[0] << LogicalShift[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] << A[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] << A[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] << A[2].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[4] << A[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[5] << A[2].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[6] << A[3].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[7] << A[3].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[8] << <GND>
+LEDR[9] << <GND>
+SW[0] => A[0].IN4
+SW[1] => A[1].IN4
+SW[2] => A[2].IN4
+SW[3] => A[3].IN3
+SW[4] => B[0].IN2
+SW[5] => B[1].IN2
+SW[6] => B[2].IN2
+SW[7] => B[3].IN2
+SW[8] => ~NO_FANOUT~
+SW[9] => ~NO_FANOUT~
+
+
+|shiftandarithmeticFPGA|convert:dispCombine
+halfbyte[0] => Decoder0.IN3
+halfbyte[1] => Decoder0.IN2
+halfbyte[2] => Decoder0.IN1
+halfbyte[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seg[7] <= <VCC>
+
+
+|shiftandarithmeticFPGA|convert:dispCombine2
+halfbyte[0] => Decoder0.IN3
+halfbyte[1] => Decoder0.IN2
+halfbyte[2] => Decoder0.IN1
+halfbyte[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seg[7] <= <VCC>
+
+
+|shiftandarithmeticFPGA|add:a1
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+sum[0] <= fulladder:SFA1.port3
+sum[1] <= fulladder:SFA2.port3
+sum[2] <= fulladder:SFA3.port3
+sum[3] <= fulladder:SFA4.port3
+carryout <= fulladder:SFA4.port4
+
+
+|shiftandarithmeticFPGA|add:a1|fulladder:SFA1
+a => s.IN0
+a => c.IN0
+b => s.IN1
+b => c.IN1
+cin => s.IN1
+cin => c.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|shiftandarithmeticFPGA|add:a1|fulladder:SFA2
+a => s.IN0
+a => c.IN0
+b => s.IN1
+b => c.IN1
+cin => s.IN1
+cin => c.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|shiftandarithmeticFPGA|add:a1|fulladder:SFA3
+a => s.IN0
+a => c.IN0
+b => s.IN1
+b => c.IN1
+cin => s.IN1
+cin => c.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|shiftandarithmeticFPGA|add:a1|fulladder:SFA4
+a => s.IN0
+a => c.IN0
+b => s.IN1
+b => c.IN1
+cin => s.IN1
+cin => c.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|shiftandarithmeticFPGA|multiply:m1
+A[0] => product.IN0
+A[0] => comb.IN0
+A[0] => comb.IN0
+A[0] => comb.IN0
+A[1] => comb.IN0
+A[1] => comb.IN0
+A[1] => comb.IN0
+A[1] => comb.IN0
+A[2] => comb.IN0
+A[2] => comb.IN0
+A[2] => comb.IN0
+A[2] => comb.IN0
+A[3] => comb.IN0
+A[3] => comb.IN0
+A[3] => comb.IN0
+A[3] => comb.IN0
+B[0] => product.IN1
+B[0] => comb.IN1
+B[0] => comb.IN1
+B[0] => comb.IN1
+B[1] => comb.IN1
+B[1] => comb.IN1
+B[1] => comb.IN1
+B[1] => comb.IN1
+B[2] => comb.IN1
+B[2] => comb.IN1
+B[2] => comb.IN1
+B[2] => comb.IN1
+B[3] => comb.IN1
+B[3] => comb.IN1
+B[3] => comb.IN1
+B[3] => comb.IN1
+product[0] <= product.DB_MAX_OUTPUT_PORT_TYPE
+product[1] <= halfadder:MHA1.port2
+product[2] <= halfadder:MHA2.port2
+product[3] <= halfadder:MHA3.port2
+product[4] <= fulladder:MFA5.port3
+product[5] <= fulladder:MFA7.port3
+product[6] <= fulladder:MFA8.port3
+product[7] <= fulladder:MFA8.port4
+
+
+|shiftandarithmeticFPGA|multiply:m1|halfadder:MHA1
+a => s.IN0
+a => c.IN0
+b => s.IN1
+b => c.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|shiftandarithmeticFPGA|multiply:m1|fulladder:MFA1
+a => s.IN0
+a => c.IN0
+b => s.IN1
+b => c.IN1
+cin => s.IN1
+cin => c.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|shiftandarithmeticFPGA|multiply:m1|halfadder:MHA2
+a => s.IN0
+a => c.IN0
+b => s.IN1
+b => c.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|shiftandarithmeticFPGA|multiply:m1|fulladder:MFA2
+a => s.IN0
+a => c.IN0
+b => s.IN1
+b => c.IN1
+cin => s.IN1
+cin => c.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|shiftandarithmeticFPGA|multiply:m1|fulladder:MFA3
+a => s.IN0
+a => c.IN0
+b => s.IN1
+b => c.IN1
+cin => s.IN1
+cin => c.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|shiftandarithmeticFPGA|multiply:m1|halfadder:MHA3
+a => s.IN0
+a => c.IN0
+b => s.IN1
+b => c.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|shiftandarithmeticFPGA|multiply:m1|halfadder:MHA4
+a => s.IN0
+a => c.IN0
+b => s.IN1
+b => c.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|shiftandarithmeticFPGA|multiply:m1|fulladder:MFA4
+a => s.IN0
+a => c.IN0
+b => s.IN1
+b => c.IN1
+cin => s.IN1
+cin => c.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|shiftandarithmeticFPGA|multiply:m1|fulladder:MFA5
+a => s.IN0
+a => c.IN0
+b => s.IN1
+b => c.IN1
+cin => s.IN1
+cin => c.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|shiftandarithmeticFPGA|multiply:m1|fulladder:MFA6
+a => s.IN0
+a => c.IN0
+b => s.IN1
+b => c.IN1
+cin => s.IN1
+cin => c.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|shiftandarithmeticFPGA|multiply:m1|fulladder:MFA7
+a => s.IN0
+a => c.IN0
+b => s.IN1
+b => c.IN1
+cin => s.IN1
+cin => c.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|shiftandarithmeticFPGA|multiply:m1|fulladder:MFA8
+a => s.IN0
+a => c.IN0
+b => s.IN1
+b => c.IN1
+cin => s.IN1
+cin => c.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|shiftandarithmeticFPGA|convert:dispAdd
+halfbyte[0] => Decoder0.IN3
+halfbyte[1] => Decoder0.IN2
+halfbyte[2] => Decoder0.IN1
+halfbyte[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seg[7] <= <VCC>
+
+
+|shiftandarithmeticFPGA|convertCarry:dispCarry
+carry => Decoder0.IN0
+seg[0] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= <GND>
+seg[2] <= <GND>
+seg[3] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= <VCC>
+seg[7] <= <VCC>
+
+
+|shiftandarithmeticFPGA|convert:dispProduct1
+halfbyte[0] => Decoder0.IN3
+halfbyte[1] => Decoder0.IN2
+halfbyte[2] => Decoder0.IN1
+halfbyte[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seg[7] <= <VCC>
+
+
+|shiftandarithmeticFPGA|convert:dispProduct2
+halfbyte[0] => Decoder0.IN3
+halfbyte[1] => Decoder0.IN2
+halfbyte[2] => Decoder0.IN1
+halfbyte[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seg[7] <= <VCC>
+
+

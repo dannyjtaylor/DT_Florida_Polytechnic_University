@@ -1,0 +1,27 @@
+module ShiftAndArithmetic(
+   input [3:0] A, B,
+	output [3:0] LogicalShift,
+	output [3:0] ArithmeticShift,
+	output [7:0] Combined,
+	output [3:0] Sum,
+	output [7:0] Product);
+	
+	//logical shift to the left
+	assign LogicalShift = A << 1;
+	//arithmetic shift to the right
+	assign ArithmeticShift = $signed(A) >>> 1;
+	//concatenation of A and Logical Shift result
+	assign Combined = {A, LogicalShift};
+	//addition
+	assign Sum = Add(A,B);
+	//multiplication
+	assign Product = Multiply(A,B);
+endmodule
+
+module Add(input [3:0] A, B, output [3:0] sum);
+	assign sum = A + B;
+endmodule
+
+module Multiply(input[3:0] A, B, output [7:0] product);
+	assign product = A * B;
+endmodule
