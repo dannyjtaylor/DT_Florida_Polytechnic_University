@@ -1,0 +1,107 @@
+# Reading pref.tcl
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2021.2 win64 Apr 14 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do CE_Lab2_Counter_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Questa Intel Starter FPGA Edition-64 vmap 2021.2 Lib Mapping Utility 2021.04 Apr 14 2021
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/21.1/questa_fse/win64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/onur/Desktop/MyWork/Quartus/CodeGenerated/DE10_LITE/CE_Lab2_Counter {C:/Users/onur/Desktop/MyWork/Quartus/CodeGenerated/DE10_LITE/CE_Lab2_Counter/my_counter.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 23:43:33 on Feb 07,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/onur/Desktop/MyWork/Quartus/CodeGenerated/DE10_LITE/CE_Lab2_Counter" C:/Users/onur/Desktop/MyWork/Quartus/CodeGenerated/DE10_LITE/CE_Lab2_Counter/my_counter.v 
+# -- Compiling module my_counter
+# 
+# Top level modules:
+# 	my_counter
+# End time: 23:43:33 on Feb 07,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/onur/Desktop/MyWork/Quartus/CodeGenerated/DE10_LITE/CE_Lab2_Counter {C:/Users/onur/Desktop/MyWork/Quartus/CodeGenerated/DE10_LITE/CE_Lab2_Counter/SEG7_LUT.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 23:43:33 on Feb 07,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/onur/Desktop/MyWork/Quartus/CodeGenerated/DE10_LITE/CE_Lab2_Counter" C:/Users/onur/Desktop/MyWork/Quartus/CodeGenerated/DE10_LITE/CE_Lab2_Counter/SEG7_LUT.v 
+# -- Compiling module SEG7_LUT
+# 
+# Top level modules:
+# 	SEG7_LUT
+# End time: 23:43:33 on Feb 07,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/onur/Desktop/MyWork/Quartus/CodeGenerated/DE10_LITE/CE_Lab2_Counter {C:/Users/onur/Desktop/MyWork/Quartus/CodeGenerated/DE10_LITE/CE_Lab2_Counter/ce_lab2_counter.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 23:43:34 on Feb 07,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/onur/Desktop/MyWork/Quartus/CodeGenerated/DE10_LITE/CE_Lab2_Counter" C:/Users/onur/Desktop/MyWork/Quartus/CodeGenerated/DE10_LITE/CE_Lab2_Counter/ce_lab2_counter.v 
+# -- Compiling module CE_Lab2_Counter
+# 
+# Top level modules:
+# 	CE_Lab2_Counter
+# End time: 23:43:34 on Feb 07,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/onur/Desktop/MyWork/Quartus/CodeGenerated/DE10_LITE/CE_Lab2_Counter {C:/Users/onur/Desktop/MyWork/Quartus/CodeGenerated/DE10_LITE/CE_Lab2_Counter/my_testbench.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 23:43:34 on Feb 07,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/onur/Desktop/MyWork/Quartus/CodeGenerated/DE10_LITE/CE_Lab2_Counter" C:/Users/onur/Desktop/MyWork/Quartus/CodeGenerated/DE10_LITE/CE_Lab2_Counter/my_testbench.v 
+# -- Compiling module my_testbench
+# 
+# Top level modules:
+# 	my_testbench
+# End time: 23:43:34 on Feb 07,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  my_testbench
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" my_testbench 
+# Start time: 23:43:34 on Feb 07,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.my_testbench(fast)
+# Loading work.my_counter(fast)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# At time 0    , ledr = 10'bxxxxxxxxxx
+# At time 5000 , ledr = 10'b0000000000
+# At time 65000, ledr = 10'b1111111100
+# ** Note: $stop    : C:/Users/onur/Desktop/MyWork/Quartus/CodeGenerated/DE10_LITE/CE_Lab2_Counter/my_testbench.v(15)
+#    Time: 173 ns  Iteration: 0  Instance: /my_testbench
+# Break in Module my_testbench at C:/Users/onur/Desktop/MyWork/Quartus/CodeGenerated/DE10_LITE/CE_Lab2_Counter/my_testbench.v line 15
+# couldn't load library "C:/intelFPGA_lite/21.1/questa_fse/win64/ScintillaTk/ScintillaTk114.dll": this library or a dependent library could not be found in library path
+# ** Error: list element in quotes followed by ":" instead of space
+# Error in macro ./CE_Lab2_Counter_run_msim_rtl_verilog.do line 19
+# list element in quotes followed by ":" instead of space
+#     while executing
+# "foreach val $retval { 
+# 						set wobj [$vsimPriv(windowmgr) FindWindowObj $val]
+# 						if { $wobj ne "" && [lsearch $windowobj_list $wobj] < 0 } {
+# 				..."
+#     (procedure "view" line 144)
+#     invoked from within
+# "view source"
+#     (procedure "run" line 107)
+#     invoked from within
+# "run -all"
+# Causality operation skipped due to absence of debug database file
+run
+quit
+# End time: 23:44:11 on Feb 07,2025, Elapsed time: 0:00:37
+# Errors: 1, Warnings: 0
