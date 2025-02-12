@@ -1,0 +1,21 @@
+class Graph
+{
+    // Number of vertices
+    int V;
+    // Adjacency list representation
+    // Pair of a neighbor vertex and a weight for every edge
+    list< pair<int, int> > *adj;
+public:
+    Graph(int V);
+    // Function to add an edge to graph
+    void addEdge(int u, int v, int w);
+    // Print MST using Prim's algorithm
+    void primMST();
+};
+
+// Allocates memory for adjacency list
+Graph::Graph(int V)
+{
+    this->V = V;
+    adj = new list< pair<int, int>> [V];
+}
