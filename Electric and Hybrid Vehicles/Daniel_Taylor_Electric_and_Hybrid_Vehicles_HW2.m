@@ -26,7 +26,6 @@ a_t = diff(v_t);
 Froll = m * g * cos(beta) * (Co * (C1 * v_t.^2));
 Faero = 0.5 * p * CD * AF * (v_t.^2);
 Ftr = m*a_t + Froll(1:end-1) + Faero(1:end-1); 
-%title(plot, "Ftr vs. Time")
 
 %Ptr = Ftr * V
 Ptr = v_t(1:end-1).*Ftr;

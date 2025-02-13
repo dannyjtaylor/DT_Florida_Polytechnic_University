@@ -1,0 +1,17 @@
+module UpDownCounter(
+    input clk, reset, load, up_down,
+    input [3:0] data_in,
+    output reg [3:0] count
+);
+
+always @(posedge clk or posedge reset) begin
+    if (reset)
+        count <= 4'b0000;
+    else if (load)
+        count <= data_in;
+    else if (up_down)
+        count <= count + 1;  // Count Up
+    else
+        count <= count - 1;  // Count Down
+end
+endmodule
