@@ -1,0 +1,6 @@
+
+State Machine - |Counter|clkSelected_reg
+Name clkSelected_reg.00 clkSelected_reg.10 clkSelected_reg.01 
+clkSelected_reg.01 0 0 0 
+clkSelected_reg.00 1 0 1 
+clkSelected_reg.10 0 1 1 

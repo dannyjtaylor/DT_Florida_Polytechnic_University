@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at D_Flip_Flop.v(9): always construct contains both blocking and non-blocking assignments File: C:/Users/18639/Downloads/CodeGenerated/DE10_LITE/Counter/D_Flip_Flop.v Line: 9

@@ -1,0 +1,51 @@
+# question 1 part c
+#For the following C statement, write the corresponding MIPS assembly code. Assume that the variables f, g, h, i, and j are assigned to registers $s0, $s1, $s2, $s3, and $s4, 
+#respectively. Assume that the base address of the arrays A and B are in registers $s6 and $s7, respectively.
+
+#B[10] = A[i + j];
+
+# A[i+j]
+add $t0, $s3, $s4 # t0 = i + j
+sll $t0, $t0, 2 # have index (i+j) multiplied by 4 for offset
+add $t1, $s6, $t0 # base address + offset
+lw $t2, 0($t1) # make A[i+j] 
+
+#B[10]
+addi $t3, $zero, 10  # t3 = 10
+sll $t3, $t3, 2 # times 4 for offset
+add $t4, $s7, $t3 # base address + offset
+
+lw $t2, 0($t4) # store B[10] into A[i+j]
+
+
+# question 1 part d
+
+
+
+
+
+# question 1 part e
+# f, g, h, i, and j are assigned to registers $s0, $s1, $s2, $s3, and $s4, base address of the arrays A and B are in registers $s6 and $s7, respectively.
+sll $t0, $s0, 2 # $t0 = f * 4 
+add $t0, $s6, $t0 # $t0 = &A[f] 
+sll $t1, $s1, 2 # $t1 = g * 4 
+add $t1, $s7, $t1 # $t1 = &B[g] 
+lw $s0, 0($t0) # f = A[f] 
+addi $t2, $t0, 4 
+lw $t0, 0($t2) 
+add $t0, $t0, $s0 
+sw $t0, 0($t1)
+
+
+#question 2 part a
+# Translate the following MIPS code to C. Assume that the variables f, g, h, i, and j are assigned to registers $s0, $s1, $s2, $s3, and $s4, respectively. 
+# Assume that the base address of the arrays A and B are in registers $s6 and $s7, respectively.
+
+addi $t0, $s6, 4 # t0 = s6 + 4, so t0 = A[1]
+add  $t1, $s6, $0 # assuming $0 means $zero t1 = s6 + 0, so t1 is just base address of A
+sw   $t1, 0($t0) # storing A into memory from t1
+lw   $t0, 0($t0) # oad word, 
+add  $s0, $t1, $t0
+
+
+
