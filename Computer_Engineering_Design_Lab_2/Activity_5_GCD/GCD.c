@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 //min function, return the smaller number between a and b
 int min(int a, int b) {
     if (a < b) {
@@ -12,8 +11,7 @@ int min(int a, int b) {
         return b;
     }
 }
-
-//max function, return the smaller number between a and b
+//max function, return the larger number between a and b
 int max(int a, int b) {
     if (a > b) {
         return a;
@@ -25,7 +23,6 @@ int max(int a, int b) {
         return b;
     }
 }
-
 //gcd function
 int gcd(int a, int b) {
     //base case, if minimum is 0, return max
@@ -41,8 +38,6 @@ int gcd(int a, int b) {
         }
     }
 }
-
-
 int main(void) {
     //compute gcd of 165 and 363
     int result0 = gcd(165, 363);
@@ -54,7 +49,6 @@ int main(void) {
     printf("gcd(165,363) is %d\ngcd(48,180) is %d\ngcd(27,36) is %d\n", result0, result1, result2);
     return 0;
 }
-
 /*
 RULES:
 Start with two positive numbers, A and B.
