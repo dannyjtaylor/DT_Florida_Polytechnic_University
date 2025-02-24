@@ -1,10 +1,7 @@
 #include <stdio.h>
 //min function, return the smaller number between a and b
 int min(int a, int b) {
-    if (a < b) {
-        return a;
-    }
-    else if (a == b) {
+    if (a <= b) {
         return a;
     }
     else {
@@ -13,10 +10,7 @@ int min(int a, int b) {
 }
 //max function, return the larger number between a and b
 int max(int a, int b) {
-    if (a > b) {
-        return a;
-    }
-    else if (a == b) {
+    if (a >= b) {
         return a;
     }
     else {
