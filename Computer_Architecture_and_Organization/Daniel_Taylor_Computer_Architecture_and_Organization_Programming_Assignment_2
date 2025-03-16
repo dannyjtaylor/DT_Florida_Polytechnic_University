@@ -1,0 +1,56 @@
+#PROGRAM 1
+# array1 in $s0
+# array2 in $s1
+# 4 integers in the array, square each of them 
+
+lw $t0, 0($s0) #load value in base address into t1
+mul $t0, $t0, $t0 # square t1 y doing t1 * t1
+sw $t0, 0($s1) # store the now squared value into base address of s1 (so value in base address of first array is squared, and then stored in first value of 2nd array)
+
+#repeat for offset of 4 (increases address by 4, so it can properly load next data value, and then store that squared value)
+lw $t0, 4($s0)
+mul $t0, $t0, $t0
+sw $t0, 4($s1)
+
+#repeat for offset of 8
+lw $t0, 8($s0)
+mul $t0, $t0, $t0
+sw $t0, 8($s1)
+
+#repeat for offset of 12
+lw $t0, 12($s0)
+mul $t0, $t0, $t0
+sw $t0, 12($s1)
+#lowkey idk if i shouldve used a loop/some type of procedure, but the question just doesn't say anything, just take 4 values, square them, put them in diff array, so thats what i did
+
+
+#PROGRAM 2
+#initialization (for testing)
+addi $s0, $zero, 5
+addi $s1, $zero, 9
+addi $s2, $zero, 8 
+
+#program logic
+#check if s0 is less than s1
+slt $t0, $s0, $s1
+
+#check if t0 is 0 (meaning s0 is NOT less than s1, and is infact the greater of the 2)
+beq $t0, $zero,  s0GR
+#if no jump, then store s1 in s3 temporarily since we know know it's at least greater than or equal to s0
+add $s3, $s1, $zero
+#then jump to comparing s2 and s3 in order to find true maximum
+j compareFINAL
+
+s0GR:
+#temporarily store s0 in s3 since we know s0 is at least greater than or equal to s1
+add $s3, $s0, $zero
+
+compareFINAL:
+#use set less than again to check if s3 < s2
+slt $t0, $s3, $s2
+#if 0, then whatever value was stored in s3 is still greater than whatever is in s2, so s3 for sure holds max value. thus, exit
+beq $t0, $zero, exit
+#if no jump, then s2 is greater than whatever value was in s3. thus, we save the value of s2 into s3, so s3 for sure holds max value
+add $s3, $s2, $zero 
+exit:
+   
